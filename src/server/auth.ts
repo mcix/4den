@@ -6,6 +6,7 @@ import {
   type DefaultSession,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+import EmailProvider from "next-auth/providers/email";
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
 
@@ -51,6 +52,10 @@ export const authOptions: NextAuthOptions = {
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
+    EmailProvider({
+      server: process.env.EMAIL_SERVER,
+      from: process.env.EMAIL_FROM
+    }),
     /**
      * ...add more providers here.
      *
@@ -59,6 +64,11 @@ export const authOptions: NextAuthOptions = {
      * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
      *
      * @see https://next-auth.js.org/providers/github
+     */
+
+    /**
+     * noreply@4d-engineers.com
+     * kongyr-huvhis-jEmbe0
      */
   ],
 };
