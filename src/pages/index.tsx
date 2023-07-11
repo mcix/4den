@@ -16,8 +16,17 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            Welkom <span className="text-[hsl(280,100%,70%)]">4D</span> Engineer
+            Welkom bij <span className="text-[#4285F4] text-12xl">4D</span> Engineers
           </h1>
+          <div className="flex items-center gap-4 text-xl text-white">
+            <div className="decoration-yellow-500 underline-offset-2 underline">industrial design</div>
+            <div className="decoration-green-500 underline-offset-2 underline">electronics</div>
+            <div className="decoration-red-500 underline-offset-2 underline">mechanics</div>
+            <div className="decoration-blue-500 underline-offset-2 underline">software</div>
+            </div>
+          <span className="text-l text-white">
+            4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten. De naam 4D Engineers staat voor de 4 disciplines waarover wij beschikken. Design, Electronica, Mechanica en Software. Door te beschikken over teams waarin elke discipline is vertegenwoordigd kunnen betere ontwerpkeuzes worden gemaakt. Sommige oplossingen zijn vooral mechanisch met electronische ondersteuning anderen zijn meer electronica met firmware en eenvoudige mechanica. Bij alle ontwikkelingen blijft de designer/vormgever over de schouder meekijken.
+          </span>
           
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-white">
