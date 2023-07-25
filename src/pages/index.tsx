@@ -15,10 +15,16 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
+          
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            Welkom bij <span className="text-[#4285F4] text-12xl">4D</span> Engineers
+
+          <div className="text-2xl font-extrabold tracking-tight text-white  text-left w-full">
+            Welkom bij
+          </div>
+
+            <span className="text-[#4285F4] text-12xl">4D</span> Engineers
           </h1>
-          <div className="flex items-center gap-4 text-xl text-white">
+          <div className="flex flex-wrap items-center gap-4 text-xl text-white">
             <div className="decoration-yellow-500 underline-offset-2 underline">industrial design</div>
             <div className="decoration-green-500 underline-offset-2 underline">electronics</div>
             <div className="decoration-red-500 underline-offset-2 underline">mechanics</div>
@@ -27,6 +33,14 @@ export default function Home() {
           <span className="text-l text-white">
             4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten. De naam 4D Engineers staat voor de 4 disciplines waarover wij beschikken. Design, Electronica, Mechanica en Software. Door te beschikken over teams waarin elke discipline is vertegenwoordigd kunnen betere ontwerpkeuzes worden gemaakt. Sommige oplossingen zijn vooral mechanisch met electronische ondersteuning anderen zijn meer electronica met firmware en eenvoudige mechanica. Bij alle ontwikkelingen blijft de designer/vormgever over de schouder meekijken.
           </span>
+
+          {/* <span className="text-l text-white">
+            ONZE AANPAK
+            Methodiek.
+            Misschien wel net zo belangrijk als onze mensen is onze ontwikkelmethodiek. We maken gebruik van de intern ontwikkelde ‘Harware Scrum’ methode. Kenmerken van deze methode zijn de sterke mix tussen denken en doen, het dagelijkse (korte) overleg met de opdrachtgever en de 2 wekelijkse oplevercycli. We gebruiken daarbij een aantal tools waardoor ontwikkelingen (veel) snelle doorlopen worden en minder dead-line stress geven. We vertellen graag meer over deze methodiek.
+            Filosofie.
+            We ontwikkelen, als onze opdrachtgeven daarmee instemt, volgens de QIS filosofie. Deze filosofie stelt dat een product moet worden opgebouwd met de best verkrijgbare koop en maakdelen, geschikt is om eenbvoudig te worden gerepareerd of geupgrade en dat de eindgebruiker zo veel mogelijk van de modificaties zelkf kan uitvoeren. We hebben de ervaring dat de gebruiker van een product of systeem graag, als het eenvouidig kan, reparatie’s of upgrades uitvoert. Dit gaat daarbij danook niet ten kosten van de SLA.
+          </span> */}
           
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-white">
