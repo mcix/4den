@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.m:after {
+    content: attr(data-a) "@" attr(data-b) "." attr(data-c); 
+}

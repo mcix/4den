@@ -37,6 +37,13 @@ export default function Home() {
             4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten. De naam 4D Engineers staat voor de 4 disciplines waarover wij beschikken. Design, Electronica, Mechanica en Software. Door te beschikken over teams waarin elke discipline is vertegenwoordigd kunnen betere ontwerpkeuzes worden gemaakt. Sommige oplossingen zijn vooral mechanisch met electronische ondersteuning anderen zijn meer electronica met firmware en eenvoudige mechanica. Bij alle ontwikkelingen blijft de designer/vormgever over de schouder meekijken.
           </span>
 
+          <span className="text-l text-white">
+            contact: <a data-a="people" data-b="4d-engineers" data-c="com" href="#" className="m font-medium text-blue-400 hover:underline" onClick={(e) => {
+              const d = e.currentTarget.dataset;
+              window.location.href = `mailto:${String(d.a)}@${String(d.b)}.${String(d.c)}`;
+            }}></a>
+          </span>
+
           {/* <span className="text-l text-white">
             ONZE AANPAK
             Methodiek.
