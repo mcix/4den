@@ -29,12 +29,12 @@ export default function Home() {
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-xl text-white ">
             <div className="decoration-yellow-500 underline-offset-2 underline flex-1 text-center whitespace-nowrap">industrial design</div>
+            <div className="decoration-blue-500 underline-offset-2 underline flex-1 text-center">firmware</div>
             <div className="decoration-green-500 underline-offset-2 underline flex-1 text-center">electronics</div>
             <div className="decoration-red-500 underline-offset-2 underline flex-1 text-center">mechanics</div>
-            <div className="decoration-blue-500 underline-offset-2 underline flex-1 text-center">software</div>
             </div>
           <span className="text-l text-white">
-            4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten. De naam 4D Engineers staat voor de 4 disciplines waarover wij beschikken. Design, Electronica, Mechanica en Software. Door te beschikken over teams waarin elke discipline is vertegenwoordigd kunnen betere ontwerpkeuzes worden gemaakt. Sommige oplossingen zijn vooral mechanisch met electronische ondersteuning anderen zijn meer electronica met firmware en eenvoudige mechanica. Bij alle ontwikkelingen blijft de designer/vormgever over de schouder meekijken.
+            4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten. De naam 4D Engineers staat voor de 4 disciplines waarover wij beschikken. Design, Electronica, Firmware & Mechanica. Door te beschikken over teams waarin elke discipline is vertegenwoordigd kunnen betere ontwerpkeuzes worden gemaakt. Sommige oplossingen zijn vooral mechanisch met electronische ondersteuning anderen zijn meer electronica met firmware en eenvoudige mechanica. Bij alle ontwikkelingen blijft de designer/vormgever over de schouder meekijken.
           </span>
 
           <span className="text-l text-white">
