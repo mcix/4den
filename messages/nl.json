@@ -1,0 +1,14 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "approach": "Onze Aanpak",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "copyright": "4D Engineers"
+  },
+  "LanguageSwitcher": {
+    "nl": "Nederlands",
+    "en": "English"
+  }
+}
