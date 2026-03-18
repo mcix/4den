@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import clsx from 'clsx';
 
+import { Analytics } from '@vercel/analytics/next';
 import '@/app/globals.css';
 
 import { Inter, Lexend } from 'next/font/google';
@@ -95,6 +96,7 @@ export default async function RootLayout({
       <body className="flex h-full flex-col">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
