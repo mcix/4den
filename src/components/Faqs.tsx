@@ -3,53 +3,53 @@ import { Container } from '@/components/Container'
 const faqs = [
   [
     {
-      question: 'What types of products do you develop?',
+      question: 'Welke producten ontwikkelen jullie?',
       answer:
-        'We specialize in complex mechatronic products that require tight integration between mechanical, electronic, firmware and industrial design disciplines.',
+        'Wij zijn gespecialiseerd in complexe mechatronische producten die een nauwe integratie vragen tussen mechanica, electronica, firmware en industrieel ontwerp. Denk aan uiteenlopende machines met bewegende onderdelen.',
     },
     {
-      question: 'How does Hardware Scrum work?',
+      question: 'Hoe werken de Development Cycles?',
       answer:
-        'Hardware Scrum adapts agile principles for physical product development. We work in iterative sprints with regular demos and reviews, allowing for early validation and course correction.',
+        'Wij werken in korte cycli van 4-6 weken met een vaste prijs en deliverable per cyclus. Na elke cyclus wordt een prototype gemaakt. Afhankelijk van de complexiteit worden 2-8 cycli doorlopen tot aan marktintroductie.',
     },
     {
-      question: 'Can you work with our existing team?',
+      question: 'Kunnen jullie met ons bestaande team werken?',
       answer:
-        'Absolutely. We often embed our engineers within client teams, or work alongside your existing R&D department to fill specific capability gaps.',
-    },
-  ],
-  [
-    {
-      question: 'What industries do you serve?',
-      answer:
-        'We work across medical devices, industrial automation, consumer electronics, energy, and automotive sectors — anywhere complex mechatronic products are needed.',
-    },
-    {
-      question: 'Do you handle certification and compliance?',
-      answer:
-        'Yes, we have experience with CE marking, medical device regulations (MDR), and various industry-specific certification requirements.',
-    },
-    {
-      question: 'What is your typical project timeline?',
-      answer:
-        'Timelines vary by complexity, but a typical concept-to-prototype cycle takes 3-6 months. We provide detailed planning during the project kick-off.',
+        'Absoluut. Wij ondersteunen bij lopende projecten, bieden second opinions, en kunnen desgewenst onze ingenieurs langere tijd committeren aan de begeleiding en doorontwikkeling van een project.',
     },
   ],
   [
     {
-      question: 'Where are you located?',
+      question: 'Hoe zit het met kosten en facturatie?',
       answer:
-        'We are based in the Netherlands, but our network of engineers operates across Europe. We work both on-site and remotely depending on project needs.',
+        'In een vroeg technisch stadium (TRL 1-3) werken wij op basis van vaste uurtarieven en bent u op elk moment opzegbaar. Vanaf TRL 4 bieden wij vaste offertes per Development Cycle aan. Geen onverwachte facturen of overschrijdingen.',
     },
     {
-      question: 'How do you ensure quality?',
+      question: 'Hoe gaan jullie om met vertrouwelijkheid?',
       answer:
-        'Our QIS (Quality, Innovation, Sustainability) philosophy is embedded in everything we do. We use design reviews, testing protocols, and continuous integration practices.',
+        '4D Engineers werkt altijd onder onze eigen NDA. Wilt u dat wij uw NDA gebruiken, dan laten wij deze door onze juridische partner beoordelen.',
     },
     {
-      question: 'How do I get started?',
+      question: 'Van wie is het intellectueel eigendom?',
       answer:
-        'Simply reach out via our contact page or email us at info@4d-engineers.nl. We will schedule an introductory meeting to discuss your project needs.',
+        'De opdrachtgever krijgt de beschikking over alle IP die tijdens de ontwikkeling wordt gebruikt en ontwikkeld. Er zijn geen naheffingen of licentierelaties.',
+    },
+  ],
+  [
+    {
+      question: 'Welke disciplines bieden jullie aan?',
+      answer:
+        'Onze vakgebieden zijn: electronica, mechanica, mechatronica, productieautomatisering, maintenance, vormgeving en User Interface. Ons netwerk heeft bijna altijd de geschikte kennis.',
+    },
+    {
+      question: 'Hebben jullie ervaring met certificering?',
+      answer:
+        'Ja, wij hebben ruime ervaring met CE-markering, certificeringstrajecten en patentaanvragen. Wij kunnen ondersteunen tijdens R&D, marktintroductie en het verblijf van het product in de markt.',
+    },
+    {
+      question: 'Hoe kan ik starten?',
+      answer:
+        'Een afspraak met een van ons is de snelste weg naar een kennismaking. Neem contact op met Michiel Wanninkhof via 0653 267 122 of Michiel@4D-Engineers.com.',
     },
   ],
 ]
@@ -68,14 +68,14 @@ export function Faqs() {
             id="faq-title"
             className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
           >
-            Frequently asked questions
+            Veelgestelde vragen
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            If you can&apos;t find what you&apos;re looking for, email us at{' '}
-            <a href="mailto:info@4d-engineers.nl" className="text-blue-600 hover:text-blue-500">
-              info@4d-engineers.nl
+            Kunt u niet vinden wat u zoekt? Neem contact op via{' '}
+            <a href="mailto:Michiel@4D-Engineers.com" className="text-blue-600 hover:text-blue-500">
+              Michiel@4D-Engineers.com
             </a>{' '}
-            and we&apos;ll get back to you.
+            en wij helpen u graag verder.
           </p>
         </div>
         <ul

@@ -8,11 +8,11 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    name: 'Hardware Scrum',
-    summary: 'Agile methodology adapted for hardware development.',
+    name: 'Development Cycles',
+    summary: 'Korte cycli met vaste kosten en doorlooptijden.',
     description:
-      'Our Hardware Scrum approach brings the best of agile software development to physical product engineering, with iterative sprints and continuous validation.',
-    icon: function HardwareScrumIcon() {
+      'Wij werken op basis van korte Development Cycles (DC\'s) van 4-6 weken voor een vooraf overeengekomen prijs en deliverable. Na elke DC wordt een prototype gemaakt. Afhankelijk van de complexiteit worden 2-8 cycli doorlopen tot aan marktintroductie. Zo weet u precies wat u wanneer krijgt, zonder onverwachte facturen.',
+    icon: function CyclesIcon() {
       const id = useId()
       return (
         <>
@@ -41,11 +41,11 @@ const features = [
     },
   },
   {
-    name: 'QIS Philosophy',
-    summary: 'Quality, Innovation, and Sustainability at the core.',
+    name: 'Dienstverlening',
+    summary: 'Van consultancy tot complete productontwikkeling.',
     description:
-      'Every project we take on is guided by our QIS philosophy — ensuring quality engineering, innovative solutions, and sustainable product design.',
-    icon: function QISIcon() {
+      'Onze dienstverlening kent meerdere vormen: ondersteuning bij lopende projecten en second opinions, begeleiding bij nieuwe productontwikkelingen, en Technical Due Diligence. Vakgebieden omvatten electronica, mechanica, mechatronica, productieautomatisering, vormgeving en User Interface.',
+    icon: function ServicesIcon() {
       return (
         <>
           <path
@@ -67,10 +67,10 @@ const features = [
     },
   },
   {
-    name: 'Integrated Teams',
-    summary: 'Cross-discipline collaboration from day one.',
+    name: 'Ervaren Teams',
+    summary: 'Een netwerk van zelfstandige ingenieurs met 20+ jaar ervaring.',
     description:
-      'Our network of specialists work as one integrated team, bridging the gaps between mechanical, electronic, firmware and design engineering.',
+      'Onze maatschap bestaat uit zeer ervaren en enthousiaste ingenieurs met minimaal 20 jaar ervaring in techniek en productontwikkeling. Teams bestaan typisch uit een Architect/Projectleider, Senior Engineers en Medior Engineers. Afhankelijk van het project worden de juiste ingenieurs in het team opgenomen.',
     icon: function TeamsIcon() {
       return (
         <>
@@ -204,18 +204,19 @@ function FeaturesDesktop() {
 export function SecondaryFeatures() {
   return (
     <section
-      id="secondary-features"
-      aria-label="Features for developing complex products"
+      id="werkwijze"
+      aria-label="Onze werkwijze"
       className="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Our approach to product development.
+            Hoe wij werken.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            We combine proven engineering methodologies with agile practices to
-            deliver complex products efficiently and reliably.
+            Wij werken anders dan de meeste ingenieursbureaus. Onze bewezen
+            Development Cycles methode combineert snelheid met beheersbare kosten
+            en voorspelbare resultaten.
           </p>
         </div>
         <FeaturesMobile />

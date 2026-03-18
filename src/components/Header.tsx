@@ -75,7 +75,8 @@ function MobileNavigation() {
         className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
       >
         <MobileNavLink href="/">{t('home')}</MobileNavLink>
-        <MobileNavLink href="/approach">{t('approach')}</MobileNavLink>
+        <MobileNavLink href="/#disciplines">{t('disciplines')}</MobileNavLink>
+        <MobileNavLink href="/#werkwijze">{t('approach')}</MobileNavLink>
         <MobileNavLink href="/contact">{t('contact')}</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
         <div className="p-2">
@@ -115,8 +116,9 @@ export function Header() {
               <span className="text-blue-600">4D</span> Engineers
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="/">{t('home')}</NavLink>
-              <NavLink href="/approach">{t('approach')}</NavLink>
+              <NavLink href="/#disciplines">{t('disciplines')}</NavLink>
+              <NavLink href="/#werkwijze">{t('approach')}</NavLink>
+              <NavLink href="/#waarom-4d">{t('why4d')}</NavLink>
               <NavLink href="/contact">{t('contact')}</NavLink>
             </div>
           </div>
@@ -126,7 +128,7 @@ export function Header() {
             </div>
             <Button href="/contact" color="blue">
               <span>
-                Contact <span className="hidden lg:inline">us</span>
+                Contact
               </span>
             </Button>
             <div className="-mr-1 md:hidden">

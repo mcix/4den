@@ -1,7 +1,9 @@
 {
   "Navigation": {
     "home": "Home",
-    "approach": "Our Approach",
+    "disciplines": "Disciplines",
+    "approach": "How We Work",
+    "why4d": "Why 4D",
     "contact": "Contact"
   },
   "Footer": {

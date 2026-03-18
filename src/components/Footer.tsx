@@ -32,6 +32,9 @@ export function Footer() {
             <Link href="/" className="text-xl font-bold text-slate-900">
               <span className="text-blue-600">4D</span> Engineers
             </Link>
+            <p className="mt-2 text-sm text-slate-600">
+              Product Engineering &amp; Technische Consultancy
+            </p>
           </div>
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
@@ -42,16 +45,22 @@ export function Footer() {
           </nav>
         </div>
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
-          <div className="flex gap-x-6">
+          <div className="flex flex-col items-end gap-y-1 sm:flex-row sm:gap-x-6">
             <a
-              href="mailto:info@4d-engineers.nl"
-              className="group text-sm text-slate-500 hover:text-slate-700"
+              href="mailto:Michiel@4D-Engineers.com"
+              className="text-sm text-slate-500 hover:text-slate-700"
             >
-              info@4d-engineers.nl
+              Michiel@4D-Engineers.com
+            </a>
+            <a
+              href="tel:+31653267122"
+              className="text-sm text-slate-500 hover:text-slate-700"
+            >
+              0653 267 122
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
-            &copy; {new Date().getFullYear()} 4D Engineers. All rights reserved.
+            &copy; {new Date().getFullYear()} 4D Engineers. Alle rechten voorbehouden.
           </p>
         </div>
       </Container>

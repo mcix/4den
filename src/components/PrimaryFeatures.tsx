@@ -10,22 +10,22 @@ const features = [
   {
     title: 'Design',
     description:
-      'From initial concept to production-ready design. We bring your product vision to life with industrial design that balances aesthetics, ergonomics and manufacturability.',
+      'Van concept tot productiegereed ontwerp. Onze industrieel ontwerpers zorgen voor de juiste balans tussen vormgeving, ergonomie en maakbaarheid. Bij alle ontwikkelingen blijft de designer over de schouder meekijken.',
   },
   {
-    title: 'Electronics',
+    title: 'Electronica',
     description:
-      'Full-stack electronics development including schematic design, PCB layout, signal integrity analysis and prototype bring-up for complex embedded systems.',
+      'Complete electronica-ontwikkeling inclusief schematisch ontwerp, PCB-layout, signaalintegriteit en prototype opbouw voor complexe embedded systemen.',
   },
   {
     title: 'Firmware',
     description:
-      'Embedded software development across bare-metal, RTOS, and Linux platforms. We deliver reliable, testable firmware that makes your hardware shine.',
+      'Embedded software-ontwikkeling op bare-metal, RTOS en Linux platformen. Wij leveren betrouwbare, testbare firmware die uw hardware optimaal laat presteren.',
   },
   {
-    title: 'Mechanics',
+    title: 'Mechanica',
     description:
-      'Precision mechanical engineering with 3D modeling, FEA analysis, tolerance studies and DFM optimization for robust, manufacturable products.',
+      'Precisie werktuigbouwkunde met 3D-modellering, FEA-analyse, tolerantiestudies en DFM-optimalisatie voor robuuste, maakbare producten.',
   },
 ]
 
@@ -49,19 +49,20 @@ export function PrimaryFeatures() {
 
   return (
     <section
-      id="features"
-      aria-label="Features for developing complex products"
+      id="disciplines"
+      aria-label="Onze vier disciplines"
       className="relative overflow-hidden bg-blue-600 pt-20 pb-28 sm:py-32"
     >
       <div className="absolute inset-0 bg-[url('/images/background-features.jpg')] bg-cover bg-center opacity-40" />
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to develop complex products.
+            Vier disciplines, één geïntegreerd team.
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            Four disciplines, one integrated team. We cover the full spectrum of
-            mechatronic product development.
+            De naam 4D Engineers staat voor de 4 disciplines waarover wij
+            beschikken. Door teams samen te stellen waarin elke discipline
+            vertegenwoordigd is, worden betere ontwerpkeuzes gemaakt.
           </p>
         </div>
         <TabGroup

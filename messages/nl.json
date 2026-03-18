@@ -1,7 +1,9 @@
 {
   "Navigation": {
     "home": "Home",
-    "approach": "Onze Aanpak",
+    "disciplines": "Disciplines",
+    "approach": "Werkwijze",
+    "why4d": "Waarom 4D",
     "contact": "Contact"
   },
   "Footer": {
