@@ -5,7 +5,7 @@ export function CallToAction() {
   return (
     <section
       id="contact-cta"
-      className="relative overflow-hidden bg-blue-600 py-32"
+      className="relative overflow-hidden bg-blue-600 dark:bg-blue-700 py-32"
     >
       <div className="absolute inset-0 bg-[url('/images/background-call-to-action.jpg')] bg-cover bg-center opacity-40" />
       <Container className="relative">

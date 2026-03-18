@@ -7,6 +7,7 @@ import { getMessages } from 'next-intl/server';
 import clsx from 'clsx';
 
 import { Analytics } from '@vercel/analytics/next';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import '@/app/globals.css';
 
 import { Inter, Lexend } from 'next/font/google';
@@ -88,16 +89,19 @@ export default async function RootLayout({
     <html
       lang={htmlLang}
       className={clsx(
-        'h-full scroll-smooth bg-white antialiased',
+        'h-full scroll-smooth bg-white antialiased dark:bg-slate-900',
         inter.variable,
         lexend.variable,
       )}
+      suppressHydrationWarning
     >
       <body className="flex h-full flex-col">
-        <NextIntlClientProvider messages={messages}>
-          {children}
-          <Analytics />
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+            <Analytics />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

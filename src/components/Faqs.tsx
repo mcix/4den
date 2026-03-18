@@ -59,20 +59,20 @@ export function Faqs() {
     <section
       id="faq"
       aria-labelledby="faq-title"
-      className="relative overflow-hidden bg-slate-50 py-20 sm:py-32"
+      className="relative overflow-hidden bg-slate-50 dark:bg-slate-800/50 py-20 sm:py-32"
     >
       <div className="absolute inset-0 bg-[url('/images/background-faqs.jpg')] bg-cover bg-center opacity-10" />
       <Container className="relative">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
             id="faq-title"
-            className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
+            className="font-display text-3xl tracking-tight text-slate-900 dark:text-white sm:text-4xl"
           >
             Veelgestelde vragen
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p className="mt-4 text-lg tracking-tight text-slate-700 dark:text-slate-300">
             Kunt u niet vinden wat u zoekt? Neem contact op via{' '}
-            <a href="mailto:Michiel@4D-Engineers.com" className="text-blue-600 hover:text-blue-500">
+            <a href="mailto:Michiel@4D-Engineers.com" className="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
               Michiel@4D-Engineers.com
             </a>{' '}
             en wij helpen u graag verder.
@@ -87,10 +87,10 @@ export function Faqs() {
               <ul role="list" className="flex flex-col gap-y-8">
                 {column.map((faq, faqIndex) => (
                   <li key={faqIndex}>
-                    <h3 className="font-display text-lg/7 text-slate-900">
+                    <h3 className="font-display text-lg/7 text-slate-900 dark:text-white">
                       {faq.question}
                     </h3>
-                    <p className="mt-4 text-sm text-slate-700">{faq.answer}</p>
+                    <p className="mt-4 text-sm text-slate-700 dark:text-slate-300">{faq.answer}</p>
                   </li>
                 ))}
               </ul>

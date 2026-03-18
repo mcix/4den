@@ -38,14 +38,14 @@ export function Testimonials() {
     <section
       id="waarom-4d"
       aria-label="Waarom 4D Engineers"
-      className="bg-slate-50 py-20 sm:py-32"
+      className="bg-slate-50 dark:bg-slate-800/50 py-20 sm:py-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             Waarom 4D Engineers?
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p className="mt-4 text-lg tracking-tight text-slate-700 dark:text-slate-300">
             Een maatschap zonder hoge vaste kosten, maar wel met zeer ervaren en
             enthousiaste ingenieurs die focussen op snelheid zonder
             budgetoverschrijdingen.
@@ -57,11 +57,11 @@ export function Testimonials() {
         >
           {usps.map((usp) => (
             <li key={usp.title}>
-              <div className="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
-                <h3 className="font-display text-lg font-medium text-slate-900">
+              <div className="relative rounded-2xl bg-white dark:bg-slate-800 p-6 shadow-xl shadow-slate-900/10 dark:shadow-black/20">
+                <h3 className="font-display text-lg font-medium text-slate-900 dark:text-white">
                   {usp.title}
                 </h3>
-                <p className="mt-3 text-sm tracking-tight text-slate-700">
+                <p className="mt-3 text-sm tracking-tight text-slate-700 dark:text-slate-300">
                   {usp.description}
                 </p>
               </div>

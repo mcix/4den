@@ -51,7 +51,7 @@ export function PrimaryFeatures() {
     <section
       id="disciplines"
       aria-label="Onze vier disciplines"
-      className="relative overflow-hidden bg-blue-600 pt-20 pb-28 sm:py-32"
+      className="relative overflow-hidden bg-blue-600 dark:bg-blue-700 pt-20 pb-28 sm:py-32"
     >
       <div className="absolute inset-0 bg-[url('/images/background-features.jpg')] bg-cover bg-center opacity-40" />
       <Container className="relative">
