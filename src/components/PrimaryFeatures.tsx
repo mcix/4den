@@ -74,31 +74,21 @@ export function PrimaryFeatures() {
               <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
                 <TabList className="relative z-10 flex gap-x-4 px-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
                   {features.map((feature, featureIndex) => (
-                    <div
+                    <Tab
                       key={feature.title}
                       className={clsx(
-                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6',
+                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 text-left',
+                        'font-display text-lg data-selected:not-data-focus:outline-hidden',
                         selectedIndex === featureIndex
-                          ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:ring-inset'
-                          : 'hover:bg-white/10 lg:hover:bg-white/5',
+                          ? 'bg-white text-blue-600 lg:bg-white/10 lg:text-white lg:ring-1 lg:ring-white/10 lg:ring-inset'
+                          : 'text-blue-100 hover:bg-white/10 hover:text-white lg:hover:bg-white/5',
                       )}
                     >
-                      <h3>
-                        <Tab
-                          className={clsx(
-                            'font-display text-lg data-selected:not-data-focus:outline-hidden',
-                            selectedIndex === featureIndex
-                              ? 'text-blue-600 lg:text-white'
-                              : 'text-blue-100 hover:text-white lg:text-white',
-                          )}
-                        >
-                          <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
-                          {feature.title}
-                        </Tab>
-                      </h3>
+                      <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
+                      <span className="relative">{feature.title}</span>
                       <p
                         className={clsx(
-                          'mt-2 hidden text-sm lg:block',
+                          'mt-2 hidden text-sm font-normal lg:block',
                           selectedIndex === featureIndex
                             ? 'text-white'
                             : 'text-blue-100 group-hover:text-white',
@@ -106,7 +96,7 @@ export function PrimaryFeatures() {
                       >
                         {feature.description}
                       </p>
-                    </div>
+                    </Tab>
                   ))}
                 </TabList>
               </div>

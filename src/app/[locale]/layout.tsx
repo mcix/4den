@@ -45,11 +45,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = ogMeta[locale] || ogMeta.nl;
 
+  const localePrefix = locale === 'nl' ? '' : `/${locale}`;
+  const canonicalUrl = `${baseUrl}${localePrefix}`;
+
   return {
     metadataBase: new URL(baseUrl),
     title: {
       template: '%s - 4D Engineers',
-      default: '4D Engineers',
+      default: t.title,
     },
     description: t.description,
     openGraph: {
@@ -58,10 +61,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: '4D Engineers',
       locale: t.locale,
       type: 'website',
-      url: baseUrl,
+      url: canonicalUrl,
     },
     alternates: {
-      canonical: baseUrl,
+      canonical: canonicalUrl,
       languages: {
         nl: baseUrl,
         en: `${baseUrl}/en`,
