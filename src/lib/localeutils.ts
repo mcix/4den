@@ -7,6 +7,11 @@ const localeMap: Record<string, string> = {
   en: 'en',
 };
 
+const ogLocaleMap: Record<string, string> = {
+  nl: 'nl_NL',
+  en: 'en_US',
+};
+
 export function getLocaleFromParams(params: { locale?: string }) {
   return params.locale || 'nl';
 }
@@ -23,7 +28,11 @@ export function generateMetadataHelper({
   route: string;
 }) {
   const resolvedLocale = getLocaleFromParams(params);
-  const ogLocale = getLocale(resolvedLocale);
+  const ogLocale = ogLocaleMap[resolvedLocale] || 'nl_NL';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
+  const localePrefix = resolvedLocale === 'nl' ? '' : `/${resolvedLocale}`;
+  const cleanRoute = route === '/' ? '' : route.replace(/\/$/, '');
+  const fullUrl = `${baseUrl}${localePrefix}${cleanRoute}`;
 
   let source = '';
   try {
@@ -40,10 +49,6 @@ export function generateMetadataHelper({
 
   try {
     const { data: frontmatter } = matter(source);
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
-    const localePrefix = resolvedLocale === 'nl' ? '' : `/${resolvedLocale}`;
-    const cleanRoute = route.replace(/\/$/, '');
-    const fullUrl = `${baseUrl}${localePrefix}${cleanRoute}`;
 
     return {
       title: frontmatter.title,
@@ -51,6 +56,7 @@ export function generateMetadataHelper({
       openGraph: {
         title: frontmatter.title,
         description: frontmatter.description,
+        siteName: '4D Engineers',
         locale: ogLocale,
         type: 'website' as const,
         url: fullUrl,
@@ -60,14 +66,30 @@ export function generateMetadataHelper({
         languages: {
           nl: `${baseUrl}${cleanRoute}`,
           en: `${baseUrl}/en${cleanRoute}`,
+          'x-default': `${baseUrl}${cleanRoute}`,
         },
       },
     };
   } catch {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
     return {
       title: '4D Engineers',
       description: '4D Engineers - Design, Electronica, Firmware & Mechanica',
+      openGraph: {
+        title: '4D Engineers',
+        description: '4D Engineers - Design, Electronica, Firmware & Mechanica',
+        siteName: '4D Engineers',
+        locale: ogLocale,
+        type: 'website' as const,
+        url: fullUrl,
+      },
+      alternates: {
+        canonical: fullUrl,
+        languages: {
+          nl: `${baseUrl}${cleanRoute}`,
+          en: `${baseUrl}/en${cleanRoute}`,
+          'x-default': `${baseUrl}${cleanRoute}`,
+        },
+      },
     };
   }
 }

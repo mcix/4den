@@ -13,16 +13,20 @@ import { Inter } from 'next/font/google';
 
 const font = Inter({ subsets: ['latin'] });
 
-const ogMeta: Record<string, { title: string; description: string }> = {
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
+
+const ogMeta: Record<string, { title: string; description: string; locale: string }> = {
   nl: {
     title: '4D Engineers — Design, Electronica, Firmware & Mechanica',
     description:
       '4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten.',
+    locale: 'nl_NL',
   },
   en: {
     title: '4D Engineers — Design, Electronics, Firmware & Mechanics',
     description:
       '4D Engineers is a network of experienced engineers for the development of complex (mechatronic) products.',
+    locale: 'en_US',
   },
 };
 
@@ -31,6 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = ogMeta[locale] || ogMeta.nl;
 
   return {
+    metadataBase: new URL(baseUrl),
     title: {
       template: '%s - 4D Engineers',
       default: '4D Engineers',
@@ -39,7 +44,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: t.title,
       description: t.description,
+      siteName: '4D Engineers',
+      locale: t.locale,
       type: 'website',
+      url: baseUrl,
+    },
+    alternates: {
+      canonical: baseUrl,
+      languages: {
+        nl: baseUrl,
+        en: `${baseUrl}/en`,
+        'x-default': baseUrl,
+      },
     },
   };
 }
