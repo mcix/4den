@@ -1,24 +1,31 @@
-import { notFound } from 'next/navigation';
-import { generateMetadataHelper, getLocaleFromParams } from '@/lib/localeutils';
-
-const content: Record<string, () => Promise<{ default: React.ComponentType }>> = {
-  nl: () => import('./content/nl.mdx'),
-  en: () => import('./content/en.mdx'),
-};
+import { generateMetadataHelper } from '@/lib/localeutils';
+import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
+import { PrimaryFeatures } from '@/components/PrimaryFeatures';
+import { SecondaryFeatures } from '@/components/SecondaryFeatures';
+import { CallToAction } from '@/components/CallToAction';
+import { Testimonials } from '@/components/Testimonials';
+import { Faqs } from '@/components/Faqs';
+import { Footer } from '@/components/Footer';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
   return generateMetadataHelper({ params, route: '/' });
 }
 
-export default async function HomePage(props: { params: Promise<{ locale: string }> }) {
-  const params = await props.params;
-  const resolvedLocale = getLocaleFromParams(params);
-
-  try {
-    const { default: Content } = await content[resolvedLocale]();
-    return <Content />;
-  } catch {
-    notFound();
-  }
+export default function HomePage() {
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <PrimaryFeatures />
+        <SecondaryFeatures />
+        <CallToAction />
+        <Testimonials />
+        <Faqs />
+      </main>
+      <Footer />
+    </>
+  );
 }

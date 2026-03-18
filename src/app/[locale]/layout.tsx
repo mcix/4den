@@ -2,16 +2,25 @@ import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getLocale } from '@/lib/localeutils';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import clsx from 'clsx';
 
 import '@/app/globals.css';
 
-import { Inter } from 'next/font/google';
+import { Inter, Lexend } from 'next/font/google';
 
-const font = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const lexend = Lexend({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-lexend',
+});
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
 
@@ -75,12 +84,17 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={htmlLang} className="h-full">
-      <body className={font.className}>
+    <html
+      lang={htmlLang}
+      className={clsx(
+        'h-full scroll-smooth bg-white antialiased',
+        inter.variable,
+        lexend.variable,
+      )}
+    >
+      <body className="flex h-full flex-col">
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="min-h-[calc(100vh-130px)]">{children}</main>
-          <Footer />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

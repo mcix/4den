@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { generateMetadataHelper, getLocaleFromParams } from '@/lib/localeutils';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 const content: Record<string, () => Promise<{ default: React.ComponentType }>> = {
   nl: () => import('./content/nl.mdx'),
@@ -17,7 +19,15 @@ export default async function ApproachPage(props: { params: Promise<{ locale: st
 
   try {
     const { default: Content } = await content[resolvedLocale]();
-    return <Content />;
+    return (
+      <>
+        <Header />
+        <main className="min-h-[calc(100vh-200px)]">
+          <Content />
+        </main>
+        <Footer />
+      </>
+    );
   } catch {
     notFound();
   }
