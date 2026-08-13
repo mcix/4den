@@ -157,7 +157,11 @@
   },
   "Footer": {
     "tagline": "Product Engineering & Technische Consultancy",
-    "copyright": "© {year} 4D Engineers. Alle rechten voorbehouden."
+    "copyright": "© {year} 4D Engineers. Alle rechten voorbehouden.",
+    "quickLinks": "snelkoppelingen"
+  },
+  "ThemeToggle": {
+    "toggle": "Thema wisselen"
   },
   "NotFound": {
     "title": "Pagina niet gevonden",

@@ -114,7 +114,7 @@ export function Header() {
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="/" aria-label="Home" className="text-xl font-bold text-slate-900 dark:text-white">
+            <Link href="/" aria-label={t('home')} className="text-xl font-bold text-slate-900 dark:text-white">
               <span className="text-blue-600 dark:text-blue-400">4D</span> Engineers
             </Link>
             <div className="hidden md:flex md:gap-x-6">

@@ -43,7 +43,7 @@ export function Footer() {
               {tFooter('tagline')}
             </p>
           </div>
-          <nav className="mt-10 text-sm" aria-label="quick links">
+          <nav className="mt-10 text-sm" aria-label={tFooter('quickLinks')}>
             <div className="-my-1 flex justify-center gap-x-6">
               <NavLink href="/">{t('home')}</NavLink>
               <NavLink href="/approach">{t('approach')}</NavLink>

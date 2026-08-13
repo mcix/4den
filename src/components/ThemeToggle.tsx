@@ -1,10 +1,12 @@
 'use client'
 
 import { useTheme } from 'next-themes'
+import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
+  const t = useTranslations('ThemeToggle')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])
@@ -12,7 +14,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <button className="rounded border border-slate-300 p-1.5 text-slate-600 dark:border-slate-600 dark:text-slate-400">
-        <span className="sr-only">Toggle theme</span>
+        <span className="sr-only">{t('toggle')}</span>
         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
         </svg>
@@ -25,7 +27,7 @@ export function ThemeToggle() {
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       className="rounded border border-slate-300 p-1.5 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-400 dark:hover:bg-slate-800"
     >
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">{t('toggle')}</span>
       {resolvedTheme === 'dark' ? (
         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
