@@ -56,7 +56,10 @@ export function PrimaryFeatures() {
                     <Tab
                       key={key}
                       className={clsx(
-                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 text-center lg:text-left',
+                        // justify-self-center keeps the pill hugging its label instead of
+                        // stretching across the whole grid cell, which made the selected
+                        // tab read as a full-width bar next to three plain labels.
+                        'group relative justify-self-center rounded-full px-4 py-1 lg:justify-self-stretch lg:rounded-l-xl lg:rounded-r-none lg:p-6 text-center lg:text-left',
                         'font-display text-lg data-selected:not-data-focus:outline-hidden',
                         selectedIndex === featureIndex
                           ? 'bg-white text-blue-600 lg:bg-white/10 lg:text-white lg:ring-1 lg:ring-white/10 lg:ring-inset'
@@ -83,7 +86,11 @@ export function PrimaryFeatures() {
                 {FEATURE_KEYS.map((key) => (
                   <TabPanel key={key} unmount={false}>
                     <div className="relative sm:px-6 lg:hidden">
-                      <div className="absolute -inset-x-4 -top-26 -bottom-17 bg-white/10 ring-1 ring-white/10 ring-inset sm:inset-x-0 sm:rounded-t-xl" />
+                      {/* The negative top pulls this frosted panel up to meet the tabs.
+                          The -26 assumes a single row of tabs, which is still true from
+                          sm up; below sm the tabs are two rows, so it needs to start
+                          lower or it covers the second row. */}
+                      <div className="absolute -inset-x-4 -top-4 -bottom-17 bg-white/10 ring-1 ring-white/10 ring-inset sm:-top-26 sm:inset-x-0 sm:rounded-t-xl" />
                       <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
                         {t(`features.${key}.description`)}
                       </p>
