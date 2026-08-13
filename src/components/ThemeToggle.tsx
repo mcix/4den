@@ -2,14 +2,20 @@
 
 import { useTheme } from 'next-themes'
 import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
+
+// The resolved theme is only known on the client, so the first client render has to match
+// the server's theme-less markup and swap in afterwards. useSyncExternalStore gives that
+// directly — false through SSR and hydration, true once mounted — without the
+// setState-in-an-effect round trip, which schedules a second render pass.
+const subscribe = () => () => {}
+const getSnapshot = () => true
+const getServerSnapshot = () => false
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
   const t = useTranslations('ThemeToggle')
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
+  const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 
   if (!mounted) {
     return (
