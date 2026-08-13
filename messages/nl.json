@@ -1,16 +1,172 @@
 {
+  "Metadata": {
+    "siteName": "4D Engineers",
+    "home": {
+      "title": "4D Engineers — Design, Electronica, Firmware & Mechanica",
+      "description": "4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten."
+    },
+    "approach": {
+      "title": "Onze Aanpak",
+      "description": "Development Cycles van 4-6 weken met vaste kosten en doorlooptijden. Zo weet u precies wat u wanneer krijgt, zonder onverwachte facturen."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Neem contact op met 4D Engineers voor de ontwikkeling van complexe mechatronische producten."
+    },
+    "notFound": {
+      "title": "Pagina niet gevonden",
+      "description": "De pagina die u zoekt bestaat niet."
+    }
+  },
   "Navigation": {
     "home": "Home",
     "disciplines": "Disciplines",
     "approach": "Werkwijze",
     "why4d": "Waarom 4D",
-    "contact": "Contact"
+    "contact": "Contact",
+    "toggleNavigation": "Navigatie openen"
+  },
+  "Hero": {
+    "title": "Complexe <highlight>product­ontwikkeling</highlight> begint hier.",
+    "intro": "4D Engineers is een onafhankelijk ingenieursbureau en netwerk van ervaren ingenieurs met minimaal 20 jaar werkervaring. Wij combineren Design, Electronica, Firmware & Mechanica in geïntegreerde teams voor de ontwikkeling van complexe mechatronische producten.",
+    "ctaContact": "Neem contact op",
+    "ctaApproach": "Onze werkwijze"
+  },
+  "PrimaryFeatures": {
+    "sectionLabel": "Onze vier disciplines",
+    "heading": "Vier disciplines, één geïntegreerd team.",
+    "intro": "De naam 4D Engineers staat voor de 4 disciplines waarover wij beschikken. Door teams samen te stellen waarin elke discipline vertegenwoordigd is, worden betere ontwerpkeuzes gemaakt.",
+    "features": {
+      "design": {
+        "title": "Design",
+        "description": "Van concept tot productiegereed ontwerp. Onze industrieel ontwerpers zorgen voor de juiste balans tussen vormgeving, ergonomie en maakbaarheid. Bij alle ontwikkelingen blijft de designer over de schouder meekijken."
+      },
+      "electronics": {
+        "title": "Electronica",
+        "description": "Complete electronica-ontwikkeling inclusief schematisch ontwerp, PCB-layout, signaalintegriteit en prototype opbouw voor complexe embedded systemen."
+      },
+      "firmware": {
+        "title": "Firmware",
+        "description": "Embedded software-ontwikkeling op bare-metal, RTOS en Linux platformen. Wij leveren betrouwbare, testbare firmware die uw hardware optimaal laat presteren."
+      },
+      "mechanics": {
+        "title": "Mechanica",
+        "description": "Precisie werktuigbouwkunde met 3D-modellering, FEA-analyse, tolerantiestudies en DFM-optimalisatie voor robuuste, maakbare producten."
+      }
+    }
+  },
+  "SecondaryFeatures": {
+    "sectionLabel": "Onze werkwijze",
+    "heading": "Hoe wij werken.",
+    "intro": "Wij werken anders dan de meeste ingenieursbureaus. Onze bewezen Development Cycles methode combineert snelheid met beheersbare kosten en voorspelbare resultaten.",
+    "features": {
+      "cycles": {
+        "name": "Development Cycles",
+        "summary": "Korte cycli met vaste kosten en doorlooptijden.",
+        "description": "Wij werken op basis van korte Development Cycles (DC's) van 4-6 weken voor een vooraf overeengekomen prijs en deliverable. Na elke DC wordt een prototype gemaakt. Afhankelijk van de complexiteit worden 2-8 cycli doorlopen tot aan marktintroductie. Zo weet u precies wat u wanneer krijgt, zonder onverwachte facturen."
+      },
+      "services": {
+        "name": "Dienstverlening",
+        "summary": "Van consultancy tot complete productontwikkeling.",
+        "description": "Onze dienstverlening kent meerdere vormen: ondersteuning bij lopende projecten en second opinions, begeleiding bij nieuwe productontwikkelingen, en Technical Due Diligence. Vakgebieden omvatten electronica, mechanica, mechatronica, productieautomatisering, vormgeving en User Interface."
+      },
+      "teams": {
+        "name": "Ervaren Teams",
+        "summary": "Een netwerk van zelfstandige ingenieurs met 20+ jaar ervaring.",
+        "description": "Onze maatschap bestaat uit zeer ervaren en enthousiaste ingenieurs met minimaal 20 jaar ervaring in techniek en productontwikkeling. Teams bestaan typisch uit een Architect/Projectleider, Senior Engineers en Medior Engineers. Afhankelijk van het project worden de juiste ingenieurs in het team opgenomen."
+      }
+    }
+  },
+  "CallToAction": {
+    "heading": "Klaar om uw project te starten?",
+    "body": "Een afspraak met een van ons is de snelste weg naar een kennismaking. Neem contact op met Michiel Wanninkhof.",
+    "cta": "Neem contact op"
+  },
+  "Testimonials": {
+    "sectionLabel": "Waarom 4D Engineers",
+    "heading": "Waarom 4D Engineers?",
+    "intro": "Een maatschap zonder hoge vaste kosten, maar wel met zeer ervaren en enthousiaste ingenieurs die focussen op snelheid zonder budgetoverschrijdingen.",
+    "usps": {
+      "network": {
+        "title": "Ervaren netwerk",
+        "description": "Een groot netwerk van zelfstandige ingenieurs met elk minimaal 20 jaar professionele ervaring in hun vakgebied. Bijna altijd beschikken wij over de geschikte kennis."
+      },
+      "fixedCosts": {
+        "title": "Vaste kosten per cyclus",
+        "description": "Wij werken met Development Cycles met vaste kosten en doorlooptijden. U weet wat u wanneer gaat krijgen tegen een eerder overeengekomen vergoeding. Geen onverwachte facturen."
+      },
+      "clients": {
+        "title": "Van startup tot multinational",
+        "description": "Onze klanten lopen uiteen van startups tot multinationals. Door de combinatie van een groot netwerk en lange ervaring kunnen wij ondersteunen waar eigen kennis soms tekortschiet."
+      },
+      "ip": {
+        "title": "Alle IP is van u",
+        "description": "De opdrachtgever krijgt de beschikking over alle IP die tijdens de ontwikkeling wordt gebruikt en ontwikkeld. Er zijn geen naheffingen of licentierelaties."
+      },
+      "coInvest": {
+        "title": "Risicodragend meeinvesteren",
+        "description": "In sommige gevallen kunnen onze zelfstandige engineers deels risicodragend meeinvesteren in uw project. Dit toont ons vertrouwen in het gezamenlijke resultaat."
+      },
+      "certification": {
+        "title": "Ervaren met certificering",
+        "description": "Wij hebben ruime ervaring met CE-markering, certificeringstrajecten en patentaanvragen. Wij begeleiden u door het gehele proces van ontwikkeling tot marktintroductie."
+      }
+    }
+  },
+  "Faqs": {
+    "heading": "Veelgestelde vragen",
+    "intro": "Kunt u niet vinden wat u zoekt? Neem contact op via <mail></mail> en wij helpen u graag verder.",
+    "items": {
+      "products": {
+        "question": "Welke producten ontwikkelen jullie?",
+        "answer": "Wij zijn gespecialiseerd in complexe mechatronische producten die een nauwe integratie vragen tussen mechanica, electronica, firmware en industrieel ontwerp. Denk aan uiteenlopende machines met bewegende onderdelen."
+      },
+      "cycles": {
+        "question": "Hoe werken de Development Cycles?",
+        "answer": "Wij werken in korte cycli van 4-6 weken met een vaste prijs en deliverable per cyclus. Na elke cyclus wordt een prototype gemaakt. Afhankelijk van de complexiteit worden 2-8 cycli doorlopen tot aan marktintroductie."
+      },
+      "existingTeam": {
+        "question": "Kunnen jullie met ons bestaande team werken?",
+        "answer": "Absoluut. Wij ondersteunen bij lopende projecten, bieden second opinions, en kunnen desgewenst onze ingenieurs langere tijd committeren aan de begeleiding en doorontwikkeling van een project."
+      },
+      "costs": {
+        "question": "Hoe zit het met kosten en facturatie?",
+        "answer": "In een vroeg technisch stadium (TRL 1-3) werken wij op basis van vaste uurtarieven en bent u op elk moment opzegbaar. Vanaf TRL 4 bieden wij vaste offertes per Development Cycle aan. Geen onverwachte facturen of overschrijdingen."
+      },
+      "confidentiality": {
+        "question": "Hoe gaan jullie om met vertrouwelijkheid?",
+        "answer": "4D Engineers werkt altijd onder onze eigen NDA. Wilt u dat wij uw NDA gebruiken, dan laten wij deze door onze juridische partner beoordelen."
+      },
+      "ip": {
+        "question": "Van wie is het intellectueel eigendom?",
+        "answer": "De opdrachtgever krijgt de beschikking over alle IP die tijdens de ontwikkeling wordt gebruikt en ontwikkeld. Er zijn geen naheffingen of licentierelaties."
+      },
+      "disciplines": {
+        "question": "Welke disciplines bieden jullie aan?",
+        "answer": "Onze vakgebieden zijn: electronica, mechanica, mechatronica, productieautomatisering, maintenance, vormgeving en User Interface. Ons netwerk heeft bijna altijd de geschikte kennis."
+      },
+      "certification": {
+        "question": "Hebben jullie ervaring met certificering?",
+        "answer": "Ja, wij hebben ruime ervaring met CE-markering, certificeringstrajecten en patentaanvragen. Wij kunnen ondersteunen tijdens R&D, marktintroductie en het verblijf van het product in de markt."
+      },
+      "start": {
+        "question": "Hoe kan ik starten?",
+        "answer": "Een afspraak met een van ons is de snelste weg naar een kennismaking. Neem contact op met Michiel Wanninkhof via 0653 267 122 of Michiel@4D-Engineers.com."
+      }
+    }
   },
   "Footer": {
-    "copyright": "4D Engineers"
+    "tagline": "Product Engineering & Technische Consultancy",
+    "copyright": "© {year} 4D Engineers. Alle rechten voorbehouden."
+  },
+  "NotFound": {
+    "title": "Pagina niet gevonden",
+    "body": "De pagina die u zoekt bestaat niet.",
+    "back": "Terug naar home"
   },
   "LanguageSwitcher": {
     "nl": "Nederlands",
-    "en": "English"
+    "en": "English",
+    "switchTo": "Schakel over naar {language}"
   }
 }

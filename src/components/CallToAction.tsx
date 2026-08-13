@@ -1,7 +1,12 @@
+import { useTranslations } from 'next-intl'
+
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { CONTACT_PHONE, CONTACT_PHONE_HREF } from '@/lib/contact'
 
 export function CallToAction() {
+  const t = useTranslations('CallToAction')
+
   return (
     <section
       id="contact-cta"
@@ -11,21 +16,18 @@ export function CallToAction() {
       <Container className="relative">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            Klaar om uw project te starten?
+            {t('heading')}
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-white">
-            Een afspraak met een van ons is de snelste weg naar een
-            kennismaking. Neem contact op met Michiel Wanninkhof.
-          </p>
+          <p className="mt-4 text-lg tracking-tight text-white">{t('body')}</p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button href="/contact" color="white">
-              Neem contact op
+              {t('cta')}
             </Button>
             <a
-              href="tel:+31653267122"
+              href={CONTACT_PHONE_HREF}
               className="text-lg font-medium text-white hover:text-blue-100"
             >
-              0653 267 122
+              {CONTACT_PHONE}
             </a>
           </div>
         </div>

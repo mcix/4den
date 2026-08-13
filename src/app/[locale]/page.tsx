@@ -10,7 +10,7 @@ import { Footer } from '@/components/Footer';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  return generateMetadataHelper({ params, route: '/' });
+  return generateMetadataHelper({ params, page: 'home' });
 }
 
 export default function HomePage() {

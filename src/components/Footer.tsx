@@ -3,6 +3,12 @@
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { Container } from '@/components/Container'
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
+  CONTACT_PHONE,
+  CONTACT_PHONE_HREF,
+} from '@/lib/contact'
 
 function NavLink({
   href,
@@ -23,6 +29,7 @@ function NavLink({
 
 export function Footer() {
   const t = useTranslations('Navigation')
+  const tFooter = useTranslations('Footer')
 
   return (
     <footer className="bg-slate-50 dark:bg-slate-800/50">
@@ -33,7 +40,7 @@ export function Footer() {
               <span className="text-blue-600 dark:text-blue-400">4D</span> Engineers
             </Link>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              Product Engineering &amp; Technische Consultancy
+              {tFooter('tagline')}
             </p>
           </div>
           <nav className="mt-10 text-sm" aria-label="quick links">
@@ -47,20 +54,21 @@ export function Footer() {
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 dark:border-slate-700 sm:flex-row-reverse sm:justify-between">
           <div className="flex flex-col items-end gap-y-1 sm:flex-row sm:gap-x-6">
             <a
-              href="mailto:Michiel@4D-Engineers.com"
+              href={CONTACT_EMAIL_HREF}
               className="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
             >
-              Michiel@4D-Engineers.com
+              {CONTACT_EMAIL}
             </a>
             <a
-              href="tel:+31653267122"
+              href={CONTACT_PHONE_HREF}
               className="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
             >
-              0653 267 122
+              {CONTACT_PHONE}
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-500 dark:text-slate-400 sm:mt-0">
-            &copy; {new Date().getFullYear()} 4D Engineers. Alle rechten voorbehouden.
+            {/* Passed as a string: ICU would format a number as "2,026". */}
+            {tFooter('copyright', { year: String(new Date().getFullYear()) })}
           </p>
         </div>
       </Container>

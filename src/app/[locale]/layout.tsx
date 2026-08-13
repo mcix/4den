@@ -1,9 +1,10 @@
 import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
-import { getLocale } from '@/lib/localeutils';
+import { getLocale, generateMetadataHelper } from '@/lib/localeutils';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import clsx from 'clsx';
 
 import { Analytics } from '@vercel/analytics/next';
@@ -26,50 +27,23 @@ const lexend = Lexend({
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
 
-const ogMeta: Record<string, { title: string; description: string; locale: string }> = {
-  nl: {
-    title: '4D Engineers — Design, Electronica, Firmware & Mechanica',
-    description:
-      '4D Engineers is een netwerk van ervaren ingenieurs voor de ontwikkeling van complexere (mechatronische) producten.',
-    locale: 'nl_NL',
-  },
-  en: {
-    title: '4D Engineers — Design, Electronics, Firmware & Mechanics',
-    description:
-      '4D Engineers is a network of experienced engineers for the development of complex (mechatronic) products.',
-    locale: 'en_US',
-  },
-};
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
-  const t = ogMeta[locale] || ogMeta.nl;
-
-  const localePrefix = locale === 'nl' ? '' : `/${locale}`;
-  const canonicalUrl = `${baseUrl}${localePrefix}`;
+  // Home lives in this same route segment, so the template below does not apply to it —
+  // it carries the full site title itself, while child segments get the "%s" suffix.
+  const metadata = await generateMetadataHelper({ params: { locale }, page: 'home' });
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
+    ...metadata,
     metadataBase: new URL(baseUrl),
     title: {
-      template: '%s - 4D Engineers',
-      default: t.title,
-    },
-    description: t.description,
-    openGraph: {
-      title: t.title,
-      description: t.description,
-      siteName: '4D Engineers',
-      locale: t.locale,
-      type: 'website',
-      url: canonicalUrl,
-    },
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        nl: baseUrl,
-        en: `${baseUrl}/en`,
-        'x-default': baseUrl,
-      },
+      template: `%s - ${t('siteName')}`,
+      default: t('home.title'),
     },
   };
 }

@@ -10,7 +10,7 @@ const content: Record<string, () => Promise<{ default: React.ComponentType }>> =
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  return generateMetadataHelper({ params, route: '/contact' });
+  return generateMetadataHelper({ params, page: 'contact' });
 }
 
 export default async function ContactPage(props: { params: Promise<{ locale: string }> }) {

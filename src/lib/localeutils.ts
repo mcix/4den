@@ -1,6 +1,7 @@
-import matter from 'gray-matter';
-import fs from 'fs';
-import path from 'path';
+import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
+
+import { routing } from '@/i18n/routing';
 
 const localeMap: Record<string, string> = {
   nl: 'nl',
@@ -12,84 +13,73 @@ const ogLocaleMap: Record<string, string> = {
   en: 'en_US',
 };
 
+/** Pages that carry their own title/description, keyed by their Metadata namespace key. */
+const pageRoutes = {
+  home: '',
+  approach: '/approach',
+  contact: '/contact',
+} as const;
+
+export type MetadataPage = keyof typeof pageRoutes;
+
 export function getLocaleFromParams(params: { locale?: string }) {
-  return params.locale || 'nl';
+  return params.locale || routing.defaultLocale;
 }
 
 export function getLocale(locale: string) {
-  return localeMap[locale] || 'nl';
+  return localeMap[locale] || routing.defaultLocale;
 }
 
-export function generateMetadataHelper({
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
+
+/**
+ * `nl` is the default locale and is served unprefixed (localePrefix: 'as-needed'),
+ * so only `en` carries a path prefix.
+ */
+function localeHref(locale: string, route: string) {
+  const prefix = locale === routing.defaultLocale ? '' : `/${locale}`;
+  return `${baseUrl}${prefix}${route}` || baseUrl;
+}
+
+/**
+ * Builds title/description/OpenGraph/hreflang for a page from the next-intl message
+ * catalog, so every locale is served its own metadata from the same source of truth
+ * as the on-page copy.
+ */
+export async function generateMetadataHelper({
   params,
-  route,
+  page,
 }: {
   params: { locale?: string };
-  route: string;
-}) {
-  const resolvedLocale = getLocaleFromParams(params);
-  const ogLocale = ogLocaleMap[resolvedLocale] || 'nl_NL';
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://4d-engineers.nl';
-  const localePrefix = resolvedLocale === 'nl' ? '' : `/${resolvedLocale}`;
-  const cleanRoute = route === '/' ? '' : route.replace(/\/$/, '');
-  const fullUrl = `${baseUrl}${localePrefix}${cleanRoute}`;
+  page: MetadataPage;
+}): Promise<Metadata> {
+  const locale = getLocaleFromParams(params);
+  const route = pageRoutes[page];
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  let source = '';
-  try {
-    const mdxPath = path.join(
-      process.cwd(),
-      'src/app/[locale]',
-      route,
-      `content/${resolvedLocale}.mdx`
-    );
-    source = fs.readFileSync(mdxPath, 'utf8');
-  } catch {
-    // fallback
-  }
+  const title = t(`${page}.title`);
+  const description = t(`${page}.description`);
+  const url = localeHref(locale, route);
 
-  try {
-    const { data: frontmatter } = matter(source);
-
-    return {
-      title: frontmatter.title,
-      description: frontmatter.description,
-      openGraph: {
-        title: frontmatter.title,
-        description: frontmatter.description,
-        siteName: '4D Engineers',
-        locale: ogLocale,
-        type: 'website' as const,
-        url: fullUrl,
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      siteName: t('siteName'),
+      locale: ogLocaleMap[locale] || ogLocaleMap[routing.defaultLocale],
+      type: 'website',
+      url,
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        ...Object.fromEntries(
+          routing.locales.map((l) => [l, localeHref(l, route)]),
+        ),
+        'x-default': localeHref(routing.defaultLocale, route),
       },
-      alternates: {
-        canonical: fullUrl,
-        languages: {
-          nl: `${baseUrl}${cleanRoute}`,
-          en: `${baseUrl}/en${cleanRoute}`,
-          'x-default': `${baseUrl}${cleanRoute}`,
-        },
-      },
-    };
-  } catch {
-    return {
-      title: '4D Engineers',
-      description: '4D Engineers - Design, Electronica, Firmware & Mechanica',
-      openGraph: {
-        title: '4D Engineers',
-        description: '4D Engineers - Design, Electronica, Firmware & Mechanica',
-        siteName: '4D Engineers',
-        locale: ogLocale,
-        type: 'website' as const,
-        url: fullUrl,
-      },
-      alternates: {
-        canonical: fullUrl,
-        languages: {
-          nl: `${baseUrl}${cleanRoute}`,
-          en: `${baseUrl}/en${cleanRoute}`,
-          'x-default': `${baseUrl}${cleanRoute}`,
-        },
-      },
-    };
-  }
+    },
+  };
 }

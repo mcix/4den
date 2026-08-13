@@ -63,7 +63,7 @@ function MobileNavigation() {
     <Popover>
       <PopoverButton
         className="relative z-10 flex h-8 w-8 items-center justify-center focus:not-data-focus:outline-hidden"
-        aria-label="Toggle Navigation"
+        aria-label={t('toggleNavigation')}
       >
         {({ open }) => <MobileNavIcon open={open} />}
       </PopoverButton>
@@ -130,9 +130,7 @@ export function Header() {
               <LanguageSwitcher />
             </div>
             <Button href="/contact" color="blue">
-              <span>
-                Contact
-              </span>
+              <span>{t('contact')}</span>
             </Button>
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
