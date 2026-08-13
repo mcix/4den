@@ -71,13 +71,15 @@ export function PrimaryFeatures() {
         >
           {({ selectedIndex }) => (
             <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
-                <TabList className="relative z-10 flex gap-x-4 px-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+              <div className="flex pb-4 sm:pb-0 lg:col-span-5">
+                {/* Two per row below sm so all four disciplines stay on screen; a single
+                    row from sm up, and the vertical rail from lg up. */}
+                <TabList className="relative z-10 grid w-full grid-cols-2 gap-2 sm:mx-auto sm:flex sm:w-auto sm:gap-x-4 lg:mx-0 lg:block lg:w-full lg:gap-x-0 lg:gap-y-1">
                   {features.map((feature, featureIndex) => (
                     <Tab
                       key={feature.title}
                       className={clsx(
-                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 text-left',
+                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 text-center lg:text-left',
                         'font-display text-lg data-selected:not-data-focus:outline-hidden',
                         selectedIndex === featureIndex
                           ? 'bg-white text-blue-600 lg:bg-white/10 lg:text-white lg:ring-1 lg:ring-white/10 lg:ring-inset'
