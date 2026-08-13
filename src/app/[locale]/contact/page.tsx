@@ -26,7 +26,7 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
   return (
     <>
       <Header />
-      <main className="min-h-[calc(100vh-200px)]">
+      <main className="flex-1">
         <Content />
       </main>
       <Footer />

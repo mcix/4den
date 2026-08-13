@@ -72,7 +72,10 @@ export default async function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <body className="flex h-full flex-col">
+      {/* min-h-full, not h-full: a fixed 100% height makes the flex children shrink once
+          the page is taller than the viewport, so main's content spills out of its box
+          and paints over the footer. */}
+      <body className="flex min-h-full flex-col">
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             {children}

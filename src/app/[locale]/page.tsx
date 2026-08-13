@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="flex-1">
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
