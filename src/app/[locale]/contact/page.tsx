@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { generateMetadataHelper, getLocaleFromParams } from '@/lib/localeutils';
+import { loadLocaleContent } from '@/lib/mdxContent';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
@@ -17,18 +18,18 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
   const params = await props.params;
   const resolvedLocale = getLocaleFromParams(params);
 
-  try {
-    const { default: Content } = await content[resolvedLocale]();
-    return (
-      <>
-        <Header />
-        <main className="min-h-[calc(100vh-200px)]">
-          <Content />
-        </main>
-        <Footer />
-      </>
-    );
-  } catch {
+  const Content = await loadLocaleContent(content, resolvedLocale);
+  if (!Content) {
     notFound();
   }
+
+  return (
+    <>
+      <Header />
+      <main className="min-h-[calc(100vh-200px)]">
+        <Content />
+      </main>
+      <Footer />
+    </>
+  );
 }
